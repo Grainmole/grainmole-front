@@ -1,0 +1,15 @@
+<main>
+  <h1>GrainMole</h1>
+  <h2>Увійти в аккаунт</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="inputs-group">
+      <input placeholder="Електронна пошта" type="email" formControlName="email">
+      <input placeholder="Пароль" type="password" formControlName="password">
+    </div>
+    <button type="submit">Увійти</button>
+  </form>
+  <span class="redirect-text">
+    <p>Немаєте аккаунта?</p>
+    <a [routerLink]="'/reg'">Зареєструватися</a>
+  </span>
+</main>
