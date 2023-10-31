@@ -1,0 +1,28 @@
+footer {
+  height: 20vh;
+  background-color: #FCF9F7;
+  padding: 5vh 10vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.contacts-title{
+  font-family: "lato-bold", Arial, sans-serif;
+  margin-bottom: 1rem;
+}
+
+.social-buttons{
+  width: 15%;
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 10%;
+}
