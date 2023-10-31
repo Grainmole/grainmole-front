@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  justify-content: end;
+  padding: 0 5vw;
+}
+
+.content {
+  width: 55%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.26rem;
+  font-weight: 900;
+  color: #303037;
+  cursor: pointer;
+}
+
+.elem-grp {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.elem-grp > a {
+  text-decoration: none;
+  color: #303037;
+}
