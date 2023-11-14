@@ -1,4 +1,5 @@
 header {
+  height: 10vh;
   display: flex;
   justify-content: end;
   padding: 0 5vw;
@@ -6,7 +7,6 @@ header {
 
 .content {
   width: 55%;
-  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
