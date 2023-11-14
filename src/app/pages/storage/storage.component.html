@@ -1,0 +1,20 @@
+<main class="main-block-gradient">
+  <img src="assets/images/backgrounds/top-gradient.png" class="gradient gradient-top" alt="gradient">
+  <div class="content">
+    <div class="title-block">
+      <h2>Ваші склади</h2>
+      <button class="green-btn">Додати склад</button>
+    </div>
+    <div class="list-of-storage" *ngIf="storages.length !== 0">
+      <div class="storage-item" *ngFor="let storage of storages">
+        <h3>{{ storage.name }}</h3>
+        <img src="assets/images/storage/storage-icon.png" alt="storage">
+        <p>Зелена зона</p>
+        <button>Переглянути деталі</button>
+        <a href="#">Редагувати</a>
+      </div>
+    </div>
+    <p class="empty-list-of-storage-message" *ngIf="storages.length === 0">Ще немає складів</p>
+  </div>
+  <img src="assets/images/backgrounds/bottom-gradient.png" class="gradient gradient-bottom" alt="gradient">
+</main>
