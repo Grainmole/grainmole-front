@@ -1,13 +1,13 @@
-<main>
+<main class="auth-content">
   <form class="inputs-group" [formGroup]="loginForm" (ngSubmit)="login()">
-      <img src="assets/images/log-reg/Vector.png">
+      <img src="assets/images/log-reg/Vector.png" alt="grain">
       <h2>Увійти в аккаунт</h2>
       <input placeholder="Email" type="email" formControlName="email">
       <input placeholder="Пароль" type="password" formControlName="password">
-      <button type="submit">Увійти в аккаунт</button>
-      <span class="text">
-        <p>Немаєте аккаунта?</p>
-      <a [routerLink]="'/reg'">Зареєструватися!</a>
+      <button type="submit" class="auth-btn">Увійти в аккаунт</button>
+      <span class="redirect-text">
+        <p>Немає акаунту?</p>
+        <a [routerLink]="'/registration'">Зареєструватися!</a>
       </span>
   </form>
 </main>

@@ -1,11 +1,12 @@
 <header>
   <div class="content">
-    <a [routerLink]="" class="logo">
-      <img src="/assets/images/logos/logo.png" alt="GrainMole">
-    </a>
-    <nav class="elem-grp">
-      <a [routerLink]="">Реєстрація</a>
-      <a [routerLink]="">Увійти</a>
+    <img src="/assets/images/logos/logo.png" [routerLink]="''" class="logo" alt="GrainMole">
+    <nav class="auth-grp" *ngIf="!isLog">
+      <a [routerLink]="'/registration'">Реєстрація</a>
+      <a [routerLink]="'/login'">Увійти</a>
+    </nav>
+    <nav *ngIf="isLog" class="logout">
+      <a (click)="logOut()">Вийти</a>
     </nav>
   </div>
 </header>
