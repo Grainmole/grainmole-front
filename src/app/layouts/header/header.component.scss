@@ -1,7 +1,7 @@
 header {
   height: 10vh;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 0 5vw;
 }
 
@@ -14,13 +14,9 @@ header {
 
 .logo {
   width: 15%;
-
-  img {
-    width: 100%;
-  }
 }
 
-.elem-grp {
+.auth-grp {
   width: 25%;
   display: flex;
   justify-content: space-between;

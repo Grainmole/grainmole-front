@@ -4,12 +4,14 @@ import { RegistrationComponent } from "./pages/registration/registration.compone
 import { LoginComponent} from "./pages/login/login.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { StorageComponent} from "./pages/storage/storage.component";
+import { IsLoginGuard } from "./shared/guards/is-login.guard";
+import { IsLogoutGuard } from "./shared/guards/is-logout.guard";
 
 const routes: Routes = [
-  { path: '', pathMatch: "full", component: HomeComponent},
-  {path: 'registration', component: RegistrationComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'storage', component: StorageComponent}
+  { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: 'registration', component: RegistrationComponent, canActivate: [IsLogoutGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [IsLogoutGuard] },
+  { path: 'storages', component: StorageComponent, canActivate: [IsLoginGuard] }
 ];
 
 @NgModule({

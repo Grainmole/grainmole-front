@@ -1,15 +1,15 @@
-<main>
-  <form class="inputs-group"[formGroup]="registrationForm" (ngSubmit)="register()">
-    <img src="assets/images/log-reg/Vector.png">
+<main class="auth-content">
+  <form class="inputs-group" [formGroup]="registrationForm" (ngSubmit)="register()">
+    <img src="assets/images/log-reg/Vector.png" alt="grain">
       <h2>Створити аккаунт</h2>
-      <input placeholder="Ім'я" type="text" formControlName="name">
-      <input placeholder="Прізвище" type="text" formControlName="surname">
+      <input placeholder="Ім'я" type="text" formControlName="firstname">
+      <input placeholder="Прізвище" type="text" formControlName="lastname">
       <input placeholder="Email" type="email" formControlName="email">
       <input placeholder="Пароль" type="password" formControlName="password">
-    <button type="submit">Зарєструватися</button>
+    <button type="submit" class="auth-btn">Створити акаунт</button>
     <span class="redirect-text">
-    <p>Вже маєте аккаунт?</p>
-    <a [routerLink]="'/login'">Увійти!</a>
-  </span>
+      <p>Уже зареєстровані?</p>
+      <a [routerLink]="'/login'">Увійти!</a>
+    </span>
   </form>
 </main>
