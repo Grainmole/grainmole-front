@@ -43,15 +43,15 @@ jobs:
 
       - name: Download task def
         run: |
-          echo "Task Definition Name: front-task"
-          aws ecs describe-task-definition --task-definition front-task --query taskDefinition > front-task.json
+          echo "Task Definition Name: grainmole-task-front"
+          aws ecs describe-task-definition --task-definition grainmole-task-front --query taskDefinition > grainmole-task-front.json
 
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: front-task.json
+          task-definition: grainmole-task-front.json
           container-name: front
           image: ${{ steps.build-image.outputs.image }}
 
