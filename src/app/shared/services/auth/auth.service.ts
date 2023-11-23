@@ -15,13 +15,13 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   registration(user: User) {
-    this.http.post<UserResponse>("http://grainmole-loadbalancer-451622333.us-east-1.elb.amazonaws.com/reg", user).subscribe(response => {
+    this.http.post<UserResponse>("http://localhost:8080/auth/reg", user).subscribe(response => {
       this.saveTokenAndRedirect(response);
     });
   }
 
   login(user: LoginUser) {
-    this.http.post<UserResponse>("http://grainmole-loadbalancer-451622333.us-east-1.elb.amazonaws.com/log", user).subscribe(response => {
+    this.http.post<UserResponse>("http://localhost:8080/auth/log", user).subscribe(response => {
       this.saveTokenAndRedirect(response);
     });
   }
@@ -29,7 +29,7 @@ export class AuthService {
   private saveTokenAndRedirect(response: UserResponse) {
     localStorage.setItem('access_token', response.access_token);
     localStorage.setItem('refresh_token', response.refresh_token);
-    this.router.navigateByUrl('/storage').then(() => {
+    this.router.navigateByUrl('/storages').then(() => {
       this.authSubject.next(true);
     });
   }

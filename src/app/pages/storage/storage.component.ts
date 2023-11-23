@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from "../../shared/services/storage/storage.service";
-import { Storage} from "../../shared/interfaces/models/Storage";
+import { Storage } from "../../shared/interfaces/models/Storage";
 
 @Component({
   selector: 'app-storage',

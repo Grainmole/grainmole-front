@@ -12,7 +12,7 @@ export class StorageService {
 
   public getAllUserStorages(): Observable<Storage[]> {
     return this.http.get<Storage[]>('http://localhost:8080/users/storages', {headers: {
-      'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+      'Authorization': `Bearer ${localStorage.getItem('access_token')}`
     }});
   }
 }
