@@ -15,13 +15,13 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   registration(user: User) {
-    this.http.post<UserResponse>("http://grainmole-loadbalancer-451622333.us-east-1.elb.amazonaws.com/reg", user).subscribe(response => {
+    this.http.post<UserResponse>("http://54.152.195.230:8080//reg", user).subscribe(response => {
       this.saveTokenAndRedirect(response);
     });
   }
 
   login(user: LoginUser) {
-    this.http.post<UserResponse>("http://grainmole-loadbalancer-451622333.us-east-1.elb.amazonaws.com/log", user).subscribe(response => {
+    this.http.post<UserResponse>("http://54.152.195.230:8080//log", user).subscribe(response => {
       this.saveTokenAndRedirect(response);
     });
   }
