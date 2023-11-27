@@ -29,7 +29,7 @@ export class AuthService {
   private saveTokenAndRedirect(response: UserResponse) {
     localStorage.setItem('access_token', response.access_token);
     localStorage.setItem('refresh_token', response.refresh_token);
-    this.router.navigateByUrl('/storage').then(() => {
+    this.router.navigateByUrl('/storages').then(() => {
       this.authSubject.next(true);
     });
   }
