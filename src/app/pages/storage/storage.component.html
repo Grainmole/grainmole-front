@@ -10,11 +10,13 @@
         <h3>{{ storage.name }}</h3>
         <img src="assets/images/storage/storage-icon.png" alt="storage">
         <p>Зелена зона</p>
-        <button type="button" (click)="viewStorageDetails(storage.storageId)">Переглянути деталі</button>
+        <button type="button" class="orange-btn" (click)="viewStorageDetails(storage.storageId)">Переглянути деталі</button>
         <a href="#">Редагувати</a>
       </div>
     </div>
-    <p class="empty-list-of-storage-message" *ngIf="storages.length === 0">Ще немає складів</p>
+    <div class="empty-space">
+      <p class="empty-list-of-storage-message" *ngIf="storages.length === 0">Ще немає складів</p>
+    </div>
   </div>
   <img src="assets/images/backgrounds/bottom-gradient.png" class="gradient gradient-bottom" alt="gradient">
 </main>

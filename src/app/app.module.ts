@@ -21,6 +21,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { StorageComponent } from './pages/storage/storage.component';
 import { StorageModalComponent } from './pages/storage/components/storage-modal/storage-modal.component';
 import { StorageDetailsComponent } from './pages/storage-details/storage-details.component';
+import { GrainsectionModalComponent } from './pages/storage-details/components/grainsection-modal/grainsection-modal.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { StorageDetailsComponent } from './pages/storage-details/storage-details
     FooterComponent,
     StorageComponent,
     StorageModalComponent,
-    StorageDetailsComponent
+    StorageDetailsComponent,
+    GrainsectionModalComponent
   ],
   imports: [
     BrowserModule,
