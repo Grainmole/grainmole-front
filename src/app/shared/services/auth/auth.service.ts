@@ -15,13 +15,13 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   registration(user: User) {
-    this.http.post<UserResponse>("http://localhost:8080/auth/reg", user).subscribe(response => {
+    this.http.post<UserResponse>("http://54.152.195.230:8080/auth/reg", user).subscribe(response => {
       this.saveTokenAndRedirect(response);
     });
   }
 
   login(user: LoginUser) {
-    this.http.post<UserResponse>("http://localhost:8080/auth/log", user).subscribe(response => {
+    this.http.post<UserResponse>("http://54.152.195.230:8080/auth/log", user).subscribe(response => {
       this.saveTokenAndRedirect(response);
     });
   }
