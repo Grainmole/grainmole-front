@@ -31,6 +31,14 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+      - name: Stop the current ECS tasks
+        run: |
+          aws ecs update-service --cluster ${{ env.ECS_CLUSTER }} --service ${{ env.ECS_SERVICE }} --desired-count 0
+
+      - name: Wait for the tasks to stop
+        run: |
+          sleep 30
+
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
@@ -62,3 +70,7 @@ jobs:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: ${{ env.ECS_SERVICE }}
           cluster: ${{ env.ECS_CLUSTER }}
+
+      - name : Run ECS task
+        run : |
+          aws ecs update-service --cluster ${{ env.ECS_CLUSTER }} --service ${{ env.ECS_SERVICE }} --desired-count 1
