@@ -8,7 +8,7 @@ import { IsLoginGuard } from "./shared/guards/is-login.guard";
 import { IsLogoutGuard } from "./shared/guards/is-logout.guard";
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: '', pathMatch: 'full', component: HomeComponent, canActivate: [IsLogoutGuard] },
   { path: 'registration', component: RegistrationComponent, canActivate: [IsLogoutGuard] },
   { path: 'login', component: LoginComponent, canActivate: [IsLogoutGuard] },
   { path: 'storages', component: StorageComponent, canActivate: [IsLoginGuard] }

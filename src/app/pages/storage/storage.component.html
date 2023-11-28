@@ -3,7 +3,7 @@
   <div class="content">
     <div class="title-block">
       <h2>Ваші склади</h2>
-      <button class="green-btn">Додати склад</button>
+      <button class="green-btn" (click)="openModal()">Додати склад</button>
     </div>
     <div class="list-of-storage" *ngIf="storages.length !== 0">
       <div class="storage-item" *ngFor="let storage of storages">

@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +19,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 
 import { HomeComponent } from './pages/home/home.component';
 import { StorageComponent } from './pages/storage/storage.component';
+import { StorageModalComponent } from './pages/storage/components/storage-modal/storage-modal.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +29,17 @@ import { StorageComponent } from './pages/storage/storage.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    StorageComponent
+    StorageComponent,
+    StorageModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
