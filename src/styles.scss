@@ -116,5 +116,23 @@ button {
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.empty-space {
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-list-of-storage-message {
+  color: #303037;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.orange-btn {
+  background-color: #EC9E5D;
+  color: #FFFFFF;
+  border-radius: 1rem;
+  font-weight: bold;
+}

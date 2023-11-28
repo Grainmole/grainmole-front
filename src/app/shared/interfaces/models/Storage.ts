@@ -1,5 +1,5 @@
 export interface Storage {
-  id: number
+  storageId: number
   name: string
   userId: number
   seedTypesName: string

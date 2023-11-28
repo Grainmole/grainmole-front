@@ -1,0 +1,36 @@
+<main class="main-block-gradient">
+  <img src="assets/images/backgrounds/top-gradient.png" class="gradient gradient-top" alt="gradient">
+  <div class="content">
+    <div class="title-block">
+      <h2>Grain Section’s:</h2>
+      <button class="green-btn" (click)="openModal()">Додати Grain Section</button>
+    </div>
+    <div class="list-of-grain-sections" *ngIf="grainSections.length !== 0">
+      <div class="grain-section-item" *ngFor="let grainSection of grainSections; index as i">
+        <div class="table-left">
+          <p>{{i + 1}}</p>
+        </div>
+        <div class="table-middle">
+          <p class="grain-sec">{{grainSection.id}}</p>
+          <p class="zone">Зелена зона</p>
+        </div>
+        <div class="table-right">
+          <button class="orange-btn">Переглянути деталі</button>
+          <a href="#">Редагувати</a>
+        </div>
+        <div class="power-table">
+          <img src="/assets/images/storage/full-battery.png" *ngIf="grainSection.batteryLevel > 80" alt="battery">
+          <img src="assets/images/storage/lover-battery.png" *ngIf="grainSection.batteryLevel > 50 && grainSection.batteryLevel <= 80" alt="battery">
+          <img src="assets/images/storage/semi-battery.png" *ngIf="grainSection.batteryLevel > 20 && grainSection.batteryLevel <= 50" alt="battery">
+          <img src="assets/images/storage/low-battery.png" *ngIf="grainSection.batteryLevel <= 20 && grainSection.batteryLevel !== 0" alt="battery">
+          <img src="assets/images/storage/empty-battery.png" *ngIf="grainSection.batteryLevel === 0" alt="battery">
+          <p>100%</p>
+        </div>
+      </div>
+    </div>
+    <div class="empty-space">
+      <p class="empty-list-of-storage-message" *ngIf="grainSections.length === 0">Ще немає Grain Section's</p>
+    </div>
+  </div>
+  <img src="assets/images/backgrounds/bottom-gradient.png" class="gradient gradient-bottom" alt="gradient">
+</main>
