@@ -24,7 +24,7 @@
           <img src="assets/images/storage/semi-battery.png" *ngIf="grainSection.batteryLevel > 20 && grainSection.batteryLevel <= 50" alt="battery">
           <img src="assets/images/storage/low-battery.png" *ngIf="grainSection.batteryLevel <= 20 && grainSection.batteryLevel !== 0" alt="battery">
           <img src="assets/images/storage/empty-battery.png" *ngIf="grainSection.batteryLevel === 0" alt="battery">
-          <p>100%</p>
+          <p>{{grainSection.batteryLevel}}%</p>
         </div>
       </div>
     </div>
