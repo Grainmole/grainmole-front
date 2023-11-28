@@ -20,6 +20,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StorageComponent } from './pages/storage/storage.component';
 import { StorageModalComponent } from './pages/storage/components/storage-modal/storage-modal.component';
+import { StorageDetailsComponent } from './pages/storage-details/storage-details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { StorageModalComponent } from './pages/storage/components/storage-modal/
     HeaderComponent,
     FooterComponent,
     StorageComponent,
-    StorageModalComponent
+    StorageModalComponent,
+    StorageDetailsComponent
   ],
   imports: [
     BrowserModule,

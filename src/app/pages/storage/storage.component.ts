@@ -3,6 +3,7 @@ import { StorageService } from "../../shared/services/storage/storage.service";
 import { Storage } from "../../shared/interfaces/models/Storage";
 import { MatDialog } from "@angular/material/dialog";
 import { StorageModalComponent } from "./components/storage-modal/storage-modal.component";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-storage',
@@ -12,7 +13,7 @@ import { StorageModalComponent } from "./components/storage-modal/storage-modal.
 export class StorageComponent implements OnInit{
   public storages: Storage[] = [];
 
-  constructor(private storageService: StorageService, private matDialog: MatDialog) {}
+  constructor(private storageService: StorageService, private matDialog: MatDialog, private router: Router) {}
 
   ngOnInit(): void {
     this.storageService.getAllUserStorages().subscribe((res) => {
@@ -22,5 +23,9 @@ export class StorageComponent implements OnInit{
 
   public openModal() {
     this.matDialog.open(StorageModalComponent);
+  }
+
+  public viewStorageDetails(id: number) {
+    this.router.navigateByUrl(`/storage-details/${id}`)
   }
 }
