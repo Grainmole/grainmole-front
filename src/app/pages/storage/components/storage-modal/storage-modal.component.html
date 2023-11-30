@@ -1,13 +1,13 @@
 <div class="modal">
-  <h2>Бажаєте додати склад?</h2>
+  <h2>Would you like to add a warehouse?</h2>
   <div class="content">
     <form [formGroup]="storageForm" (ngSubmit)="addStorage()">
-      <input type="text" placeholder="Введіть назву складу" formControlName="storageName">
+      <input type="text" placeholder="Enter the name of the warehouse" formControlName="storageName">
       <select formControlName="seedTypeName">
-        <option value="">Оберіть зернову культуру</option>
+        <option value="">Select a grain crop</option>
         <option value="hop">hop</option>
       </select>
-      <button type="submit" class="green-btn" [disabled]="storageForm.invalid">Додати склад</button>
+      <button type="submit" class="green-btn" [disabled]="storageForm.invalid">Add warehouse</button>
     </form>
     <img src="assets/images/storage/storage-icon.png" alt="storage">
   </div>

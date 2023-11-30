@@ -3,7 +3,7 @@
   <div class="content">
     <div class="title-block">
       <h2>Grain Section’s:</h2>
-      <button class="green-btn" (click)="openModal()">Додати Grain Section</button>
+      <button class="green-btn" (click)="openModal()">Add Grain Section</button>
     </div>
     <div class="list-of-grain-sections" *ngIf="grainSections.length !== 0">
       <div class="grain-section-item" *ngFor="let grainSection of grainSections; index as i">
@@ -12,11 +12,11 @@
         </div>
         <div class="table-middle">
           <p class="grain-sec">{{grainSection.id}}</p>
-          <p class="zone">Зелена зона</p>
+          <p class="zone">Green zone</p>
         </div>
         <div class="table-right">
-          <button class="orange-btn" (click)="viewGrainsectionDetails(grainSection.id)">Переглянути деталі</button>
-          <a href="#">Редагувати</a>
+          <button class="orange-btn" (click)="viewGrainsectionDetails(grainSection.id)">View details</button>
+          <a href="#">Edit</a>
         </div>
         <div class="power-table">
           <img src="/assets/images/storage/full-battery.png" *ngIf="grainSection.batteryLevel > 80" alt="battery">
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="empty-space">
-      <p class="empty-list-of-storage-message" *ngIf="grainSections.length === 0">Ще немає Grain Section's</p>
+      <p class="empty-list-of-storage-message" *ngIf="grainSections.length === 0">There are none Grain Section's</p>
     </div>
   </div>
   <img src="assets/images/backgrounds/bottom-gradient.png" class="gradient gradient-bottom" alt="gradient">
