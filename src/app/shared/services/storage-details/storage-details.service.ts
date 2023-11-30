@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { GrainSection } from "../../interfaces/models/GrainSection";
 import { GrainSectionRequest } from "../../types/GrainSectionRequest";
 
@@ -8,6 +8,7 @@ import { GrainSectionRequest } from "../../types/GrainSectionRequest";
   providedIn: 'root'
 })
 export class StorageDetailsService {
+  grainSectionList = new BehaviorSubject<GrainSection[]>([]);
 
   constructor(private http: HttpClient) {
   }

@@ -24,6 +24,9 @@ export class GrainsectionModalComponent {
       this.loaderService.isLoading.next(true);
       this.storageDetailsService.addGrainSection(grainSection).subscribe((res) => {
         this.loaderService.isLoading.next(false);
+        const currentItems = this.storageDetailsService.grainSectionList.getValue();
+        currentItems.push(res);
+        this.storageDetailsService.grainSectionList.next(currentItems);
         this.matDialog.closeAll();
       });
     }

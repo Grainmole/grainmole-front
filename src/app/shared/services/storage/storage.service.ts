@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { Storage } from "../../interfaces/models/Storage";
 import { StorageRequest } from "../../types/StorageRequest";
 
@@ -8,6 +8,7 @@ import { StorageRequest } from "../../types/StorageRequest";
   providedIn: 'root'
 })
 export class StorageService {
+  storages = new BehaviorSubject<Storage[]>([]);
 
   constructor(private http: HttpClient) { }
 
