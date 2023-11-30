@@ -2,8 +2,8 @@
   <img src="assets/images/backgrounds/top-gradient.png" class="gradient gradient-top" alt="gradient">
   <div class="content">
     <div class="title-block">
-      <h1>Деталі Grain Sections</h1>
-      <p>Норма температури: <span>{{temperatureBounds[0]}} °C - {{temperatureBounds[1]}} °C</span></p>
+      <h1>Details of Grain Sections</h1>
+      <p>Temperature norm: <span>{{temperatureBounds[0]}} °C - {{temperatureBounds[1]}} °C</span></p>
     </div>
     <div class="list-of-termosections">
       <div class="termosection-item">
@@ -11,10 +11,10 @@
           <p>1</p>
         </div>
         <div class="data-side">
-          <p>Рівень 1: <span>Усе гаразд!</span></p>
+          <p>Level 1: <span>Green zone!</span></p>
         </div>
         <div class="data-side">
-          <p>Температура зерна: <span>24 °C</span></p>
+          <p>Temperature of grain: <span>24 °C</span></p>
         </div>
       </div>
       <div class="termosection-item">
@@ -22,10 +22,10 @@
           <p>2</p>
         </div>
         <div class="data-side">
-          <p>Рівень 2: <span>Усе гаразд!</span></p>
+          <p>Level 2: <span>Green zone!</span></p>
         </div>
         <div class="data-side">
-          <p>Температура зерна: <span>24 °C</span></p>
+          <p>Temperature of grain: <span>24 °C</span></p>
         </div>
       </div>
       <div class="termosection-item">
@@ -33,10 +33,10 @@
           <p>3</p>
         </div>
         <div class="data-side">
-          <p>Рівень 3: <span style="color: #FBBC05">Увага!</span></p>
+          <p>Level 3: <span style="color: #FBBC05">Yellow zone!</span></p>
         </div>
         <div class="data-side">
-          <p>Температура зерна: <span style="color: #FBBC05">26 °C</span></p>
+          <p>Temperature of grain: <span style="color: #FBBC05">26 °C</span></p>
         </div>
       </div>
       <div class="termosection-item">
@@ -44,10 +44,10 @@
           <p>4</p>
         </div>
         <div class="data-side">
-          <p>Рівень 4: <span style="color: #F9502B">Загроза!</span></p>
+          <p>Level 4: <span style="color: #F9502B">Red zone!</span></p>
         </div>
         <div class="data-side">
-          <p>Температура зерна: <span style="color: #F9502B">30 °C</span></p>
+          <p>Temperature of grain: <span style="color: #F9502B">30 °C</span></p>
         </div>
       </div>
       <div class="termosection-item">
@@ -55,15 +55,15 @@
           <p>5</p>
         </div>
         <div class="data-side">
-          <p>Рівень 5: <span style="color: #F9502B">Загроза!</span></p>
+          <p>Level 5: <span style="color: #F9502B">Red zone!</span></p>
         </div>
         <div class="data-side">
-          <p>Температура зерна: <span style="color: #F9502B">30 °C</span></p>
+          <p>Temperature of grain: <span style="color: #F9502B">30 °C</span></p>
         </div>
       </div>
     </div>
     <div class="title-block">
-      <h2>Графіки Grain Section’s</h2>
+      <h2>Graphs of Grain Section’s</h2>
     </div>
     <div class="graphics-list">
       <app-termosection-graph [data]="termosectionInfo" *ngFor="let termosectionInfo of grainsectionInfo"></app-termosection-graph>

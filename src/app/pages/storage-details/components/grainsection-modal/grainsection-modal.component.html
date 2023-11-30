@@ -1,10 +1,10 @@
 <div class="modal">
-  <h2>Бажаєте додати Grain Section?</h2>
+  <h2>Would you like to add a Grain Section?</h2>
   <div class="content">
     <form [formGroup]="grainSectionForm" (ngSubmit)="addGrainSection()">
-      <input type="number" placeholder="Введіть код Grain Section" formControlName="id">
-      <p>Наприклад: 474747474</p>
-      <button type="submit" class="green-btn" [disabled]="grainSectionForm.invalid">Додати Grain Section</button>
+      <input type="number" placeholder="Enter the code of Grain Section" formControlName="id">
+      <p>Example: 474747474</p>
+      <button type="submit" class="green-btn" [disabled]="grainSectionForm.invalid">Add Grain Section</button>
     </form>
     <img src="assets/images/storage/storage-icon.png" alt="storage">
   </div>
