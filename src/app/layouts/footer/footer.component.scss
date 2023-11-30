@@ -9,6 +9,10 @@ footer {
 
 ul{
   list-style-type: none;
+
+  a {
+    color: #303037;
+  }
 }
 
 .contacts-title{
@@ -22,7 +26,3 @@ ul{
   justify-content: space-between;
   align-items: center;
 }
-
-//.logo {
-//  width: 10%;
-//}
