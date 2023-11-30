@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "./shared/services/auth/auth.service";
+import { LoaderService } from "./shared/services/loader/loader.service";
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,14 @@ import { AuthService } from "./shared/services/auth/auth.service";
 })
 export class AppComponent implements OnInit {
   isLog = false;
-  constructor(private authService: AuthService) {
+  isLoading = false;
+  constructor(private authService: AuthService, private loaderService: LoaderService) {
     this.authService.authSubject.subscribe(loginState => {
       this.isLog = loginState;
     });
+    this.loaderService.isLoading.subscribe(loaderState => {
+      this.isLoading = loaderState;
+    })
   }
 
   ngOnInit() {

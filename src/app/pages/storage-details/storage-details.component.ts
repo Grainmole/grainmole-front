@@ -4,6 +4,7 @@ import { StorageDetailsService } from "../../shared/services/storage-details/sto
 import { ActivatedRoute, Router } from "@angular/router";
 import { MatDialog } from "@angular/material/dialog";
 import { GrainsectionModalComponent } from "./components/grainsection-modal/grainsection-modal.component";
+import { LoaderService } from "../../shared/services/loader/loader.service";
 
 @Component({
   selector: 'app-storage-details',
@@ -15,12 +16,14 @@ export class StorageDetailsComponent implements OnInit{
   private storageId: number | undefined = undefined;
 
   constructor(private activatedRoute: ActivatedRoute, private storageDetailsService: StorageDetailsService,
-              private matDialog: MatDialog, private router: Router) {
+              private matDialog: MatDialog, private router: Router, private loaderService: LoaderService) {
   }
 
   ngOnInit(): void {
     this.storageId = +this.activatedRoute.snapshot.paramMap.get('id')!;
+    this.loaderService.isLoading.next(true);
     this.storageDetailsService.getAllStorageGrainSections(this.storageId).subscribe((res) => {
+      this.loaderService.isLoading.next(false);
       this.grainSections = res;
     });
   }
