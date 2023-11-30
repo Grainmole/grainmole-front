@@ -24,6 +24,9 @@ export class StorageModalComponent {
       this.loaderService.isLoading.next(true);
       this.storageService.addStorage(storage).subscribe((res) => {
         this.loaderService.isLoading.next(false);
+        const currentItems = this.storageService.storages.getValue();
+        currentItems.push(res);
+        this.storageService.storages.next(currentItems);
         this.matDialog.closeAll();
       });
     }

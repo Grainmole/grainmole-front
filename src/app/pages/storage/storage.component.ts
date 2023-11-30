@@ -21,7 +21,8 @@ export class StorageComponent implements OnInit{
     this.loaderService.isLoading.next(true);
     this.storageService.getAllUserStorages().subscribe((res) => {
       this.loaderService.isLoading.next(false);
-      this.storages = res;
+      this.storageService.storages.next(res);
+      this.storages = this.storageService.storages.getValue();
     });
   }
 

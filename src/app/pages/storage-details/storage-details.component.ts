@@ -24,7 +24,8 @@ export class StorageDetailsComponent implements OnInit{
     this.loaderService.isLoading.next(true);
     this.storageDetailsService.getAllStorageGrainSections(this.storageId).subscribe((res) => {
       this.loaderService.isLoading.next(false);
-      this.grainSections = res;
+      this.storageDetailsService.grainSectionList.next(res);
+      this.grainSections = this.storageDetailsService.grainSectionList.getValue();
     });
   }
 
