@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   login(user: LoginUser) {
-    this.http.post<UserResponse>("http://54.152.195.230:8080/auth/log", user).subscribe(response => {
+    this.http.post<UserResponse>("http://localhost:8080/auth/log", user).subscribe(response => {
       this.saveTokenAndRedirect(response);
     });
   }

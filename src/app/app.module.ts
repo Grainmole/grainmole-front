@@ -5,7 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HighchartsChartModule } from "highcharts-angular";
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,8 @@ import { StorageComponent } from './pages/storage/storage.component';
 import { StorageModalComponent } from './pages/storage/components/storage-modal/storage-modal.component';
 import { StorageDetailsComponent } from './pages/storage-details/storage-details.component';
 import { GrainsectionModalComponent } from './pages/storage-details/components/grainsection-modal/grainsection-modal.component';
+import { GrainsectionDetailsComponent } from './pages/grainsection-details/grainsection-details.component';
+import { TermosectionGraphComponent } from './pages/grainsection-details/components/termosection-graph/termosection-graph.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { GrainsectionModalComponent } from './pages/storage-details/components/g
     StorageComponent,
     StorageModalComponent,
     StorageDetailsComponent,
-    GrainsectionModalComponent
+    GrainsectionModalComponent,
+    GrainsectionDetailsComponent,
+    TermosectionGraphComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,8 @@ import { GrainsectionModalComponent } from './pages/storage-details/components/g
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

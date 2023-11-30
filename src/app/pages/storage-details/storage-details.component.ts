@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GrainSection } from "../../shared/interfaces/models/GrainSection";
 import { StorageDetailsService } from "../../shared/services/storage-details/storage-details.service";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { MatDialog } from "@angular/material/dialog";
 import { GrainsectionModalComponent } from "./components/grainsection-modal/grainsection-modal.component";
 
@@ -15,14 +15,13 @@ export class StorageDetailsComponent implements OnInit{
   private storageId: number | undefined = undefined;
 
   constructor(private activatedRoute: ActivatedRoute, private storageDetailsService: StorageDetailsService,
-              private matDialog: MatDialog) {
+              private matDialog: MatDialog, private router: Router) {
   }
 
   ngOnInit(): void {
     this.storageId = +this.activatedRoute.snapshot.paramMap.get('id')!;
     this.storageDetailsService.getAllStorageGrainSections(this.storageId).subscribe((res) => {
       this.grainSections = res;
-      console.log(this.grainSections)
     });
   }
 
@@ -30,5 +29,9 @@ export class StorageDetailsComponent implements OnInit{
     this.matDialog.open(GrainsectionModalComponent, {
       data: { storageId: this.storageId }
     });
+  }
+
+  public viewGrainsectionDetails(id: number) {
+    this.router.navigateByUrl(`grainsection-details/${id}`)
   }
 }
