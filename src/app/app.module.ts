@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HighchartsChartModule } from "highcharts-angular";
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { StorageDetailsComponent } from './pages/storage-details/storage-details
 import { GrainsectionModalComponent } from './pages/storage-details/components/grainsection-modal/grainsection-modal.component';
 import { GrainsectionDetailsComponent } from './pages/grainsection-details/grainsection-details.component';
 import { TermosectionGraphComponent } from './pages/grainsection-details/components/termosection-graph/termosection-graph.component';
+import { LoaderComponent } from './layouts/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { TermosectionGraphComponent } from './pages/grainsection-details/compone
     StorageDetailsComponent,
     GrainsectionModalComponent,
     GrainsectionDetailsComponent,
-    TermosectionGraphComponent
+    TermosectionGraphComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { TermosectionGraphComponent } from './pages/grainsection-details/compone
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

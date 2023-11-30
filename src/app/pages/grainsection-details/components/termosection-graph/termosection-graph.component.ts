@@ -15,7 +15,6 @@ export class TermosectionGraphComponent implements OnInit {
 
   ngOnInit() {
     this.lineChart();
-    console.log(this.data);
   }
 
   private lineChart() {
@@ -29,7 +28,6 @@ export class TermosectionGraphComponent implements OnInit {
       const withSlashes = [day, month, year, time].join('/');
       dates.push(withSlashes);
     }
-    console.log(dates)
     let chartData: any;
     const temperatures: number[] = [];
     for (let i = 0; i < this.data.length; i++) {
@@ -37,7 +35,6 @@ export class TermosectionGraphComponent implements OnInit {
       temperatures.push(temperature);
     }
     chartData = {name: 'temperature', data: temperatures};
-    console.log(temperatures)
     this.chartOptions = {
       chart: {
         type: 'spline'

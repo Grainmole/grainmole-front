@@ -5,6 +5,7 @@ import { Router } from "@angular/router";
 import { User } from "../../types/User";
 import { UserResponse } from "../../interfaces/responses/UserResponse";
 import { LoginUser } from "../../types/LoginUser";
+import { LoaderService } from "../loader/loader.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +13,20 @@ import { LoginUser } from "../../types/LoginUser";
 export class AuthService {
   authSubject = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private loaderService: LoaderService) {}
 
   registration(user: User) {
+    this.loaderService.isLoading.next(true);
     this.http.post<UserResponse>("http://54.152.195.230:8080/auth/reg", user).subscribe(response => {
+      this.loaderService.isLoading.next(false);
       this.saveTokenAndRedirect(response);
     });
   }
 
   login(user: LoginUser) {
-    this.http.post<UserResponse>("http://localhost:8080/auth/log", user).subscribe(response => {
+    this.loaderService.isLoading.next(true);
+    this.http.post<UserResponse>("http://54.152.195.230:8080/auth/log", user).subscribe(response => {
+      this.loaderService.isLoading.next(false);
       this.saveTokenAndRedirect(response);
     });
   }
