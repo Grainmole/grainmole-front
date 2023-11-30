@@ -1,0 +1,73 @@
+.content {
+  padding: 5vh 10vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-block {
+  color: #303037;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  span {
+    color: #45B500;
+    font-weight: bold;
+  }
+}
+
+.list-of-termosections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3vh 0;
+}
+
+.termosection-item {
+  width: 60%;
+  height: 10vh;
+  background-color: #FFFFFF;
+  display: flex;
+  font-size: 1.6rem;
+  box-shadow: 0 0 0.2rem #000000;
+
+  div {
+    color: #303037;
+
+    span {
+      color: #45B500;
+    }
+  }
+}
+
+.number-side {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-side {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 45%;
+}
+
+.graphics-list {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-row-gap: 2rem;
+  justify-items: center;
+  margin-top: 3vh;
+}

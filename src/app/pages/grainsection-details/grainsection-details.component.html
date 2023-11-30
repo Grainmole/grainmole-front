@@ -1,0 +1,73 @@
+<main class="main-block-gradient">
+  <img src="assets/images/backgrounds/top-gradient.png" class="gradient gradient-top" alt="gradient">
+  <div class="content">
+    <div class="title-block">
+      <h1>Деталі Grain Sections</h1>
+      <p>Норма температури: <span>{{temperatureBounds[0]}} °C - {{temperatureBounds[1]}} °C</span></p>
+    </div>
+    <div class="list-of-termosections">
+      <div class="termosection-item">
+        <div class="number-side">
+          <p>1</p>
+        </div>
+        <div class="data-side">
+          <p>Рівень 1: <span>Усе гаразд!</span></p>
+        </div>
+        <div class="data-side">
+          <p>Температура зерна: <span>24 °C</span></p>
+        </div>
+      </div>
+      <div class="termosection-item">
+        <div class="number-side">
+          <p>2</p>
+        </div>
+        <div class="data-side">
+          <p>Рівень 2: <span>Усе гаразд!</span></p>
+        </div>
+        <div class="data-side">
+          <p>Температура зерна: <span>24 °C</span></p>
+        </div>
+      </div>
+      <div class="termosection-item">
+        <div class="number-side">
+          <p>3</p>
+        </div>
+        <div class="data-side">
+          <p>Рівень 3: <span style="color: #FBBC05">Увага!</span></p>
+        </div>
+        <div class="data-side">
+          <p>Температура зерна: <span style="color: #FBBC05">26 °C</span></p>
+        </div>
+      </div>
+      <div class="termosection-item">
+        <div class="number-side">
+          <p>4</p>
+        </div>
+        <div class="data-side">
+          <p>Рівень 4: <span style="color: #F9502B">Загроза!</span></p>
+        </div>
+        <div class="data-side">
+          <p>Температура зерна: <span style="color: #F9502B">30 °C</span></p>
+        </div>
+      </div>
+      <div class="termosection-item">
+        <div class="number-side">
+          <p>5</p>
+        </div>
+        <div class="data-side">
+          <p>Рівень 5: <span style="color: #F9502B">Загроза!</span></p>
+        </div>
+        <div class="data-side">
+          <p>Температура зерна: <span style="color: #F9502B">30 °C</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="title-block">
+      <h2>Графіки Grain Section’s</h2>
+    </div>
+    <div class="graphics-list">
+      <app-termosection-graph [data]="termosectionInfo" *ngFor="let termosectionInfo of grainsectionInfo"></app-termosection-graph>
+    </div>
+  </div>
+  <img src="assets/images/backgrounds/bottom-gradient.png" class="gradient gradient-bottom" alt="gradient">
+</main>
