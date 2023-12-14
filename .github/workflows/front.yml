@@ -7,8 +7,8 @@ on:
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: grainmole-front
-  ECS_SERVICE: front
-  ECS_CLUSTER: grainmole
+  ECS_SERVICE: test
+  ECS_CLUSTER: front-cluster-v1
   CONTAINER_NAME: front
 
 jobs:
