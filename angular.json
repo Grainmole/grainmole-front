@@ -64,7 +64,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "port": 80,
+          "options": {
+            "port": 80
+          },
           "configurations": {
             "production": {
               "browserTarget": "grainmole:build:production"
