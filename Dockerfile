@@ -1,7 +1,7 @@
 FROM node:18-alpine
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm i
 COPY . .
+RUN npm i
+RUN npx ng build
 EXPOSE 80
-CMD ["npx", "ng", "build", "&&", "npx", "http-server", "dist/grainmole"]
+CMD ["npx", "http-server", "-p", "80", "dist/grainmole"]
