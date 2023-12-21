@@ -1,12 +1,27 @@
 <header>
   <div class="content">
     <img src="/assets/images/logos/logo.png" [routerLink]="''" class="logo" alt="GrainMole">
-    <nav class="auth-grp" *ngIf="!isLog">
+    <nav class="auth-grp desktop" *ngIf="!isLog">
       <a [routerLink]="'/registration'">Registration</a>
       <a [routerLink]="'/login'">Sign in</a>
     </nav>
-    <nav *ngIf="isLog" class="logout">
+    <nav *ngIf="isLog" class="logout desktop">
       <a (click)="logOut()">Log out</a>
     </nav>
+    <input type="checkbox" id="checker">
+    <label class="burgerMenu" for="checker">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
+    <div class="burgerNav">
+      <nav class="mobile auth-grp" *ngIf="!isLog">
+        <a [routerLink]="'/registration'">Registration</a>
+        <a [routerLink]="'/login'">Sign in</a>
+      </nav>
+      <nav *ngIf="isLog" class="mobile logout">
+        <a (click)="logOut()">Log out</a>
+      </nav>
+    </div>
   </div>
 </header>
