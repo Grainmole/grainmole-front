@@ -12,7 +12,7 @@ import { LoaderService } from "../loader/loader.service";
 })
 export class AuthService {
   authSubject = new Subject<boolean>();
-
+//boboakfsfsfjf
   constructor(private http: HttpClient, private router: Router, private loaderService: LoaderService) {}
   registration(user: User) {
     this.loaderService.isLoading.next(true);
