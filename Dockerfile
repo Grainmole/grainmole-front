@@ -6,4 +6,4 @@ RUN npx ng build
 RUN npm install http-server -g
 COPY . .
 EXPOSE 80
-CMD ["http-server", "dist/grainmole"]
+CMD ["npx", "ng", "build", "&&", "http-server", "dist/grainmole"]
