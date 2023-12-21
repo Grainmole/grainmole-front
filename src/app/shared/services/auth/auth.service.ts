@@ -14,10 +14,9 @@ export class AuthService {
   authSubject = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router: Router, private loaderService: LoaderService) {}
-
   registration(user: User) {
     this.loaderService.isLoading.next(true);
-    this.http.post<UserResponse>("http://54.152.195.230:8080/auth/reg", user).subscribe(response => {
+    this.http.post<UserResponse>("http://3.228.5.134:8080/auth/reg", user).subscribe(response => {
       this.loaderService.isLoading.next(false);
       this.saveTokenAndRedirect(response);
     });
@@ -25,7 +24,7 @@ export class AuthService {
 
   login(user: LoginUser) {
     this.loaderService.isLoading.next(true);
-    this.http.post<UserResponse>("http://54.152.195.230:8080/auth/log", user).subscribe(response => {
+    this.http.post<UserResponse>("http://3.228.5.134:8080/auth/log", user).subscribe(response => {
       this.loaderService.isLoading.next(false);
       this.saveTokenAndRedirect(response);
     });

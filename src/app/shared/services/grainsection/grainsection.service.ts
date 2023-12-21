@@ -18,7 +18,7 @@ export class GrainsectionService {
     const hours = currentDate.getHours().toString().padStart(2, '0');
     const minutes = currentDate.getMinutes().toString().padStart(2, '0');
     const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
-    return this.http.get<Array<TermoSection[]>>(`http://54.152.195.230:8080/grain-sections/${grainSectionId}/termo-sections?timestamp=${formattedDate}`, {headers: {
+    return this.http.get<Array<TermoSection[]>>(`http://3.228.5.134:8080/grain-sections/${grainSectionId}/termo-sections?timestamp=${formattedDate}`, {headers: {
         'Authorization': `Bearer ${localStorage.getItem('access_token')}`
       }});
   }

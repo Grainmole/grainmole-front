@@ -14,7 +14,7 @@ export class StorageDetailsService {
   }
 
   public getAllStorageGrainSections(storageId: number): Observable<GrainSection[]> {
-    return this.http.get<GrainSection[]>(`http://54.152.195.230:8080/storages/${storageId}/grain-sections`, {
+    return this.http.get<GrainSection[]>(`http://3.228.5.134:8080/storages/${storageId}/grain-sections`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('access_token')}`
       }
@@ -22,7 +22,7 @@ export class StorageDetailsService {
   }
 
   public addGrainSection(grainSection: GrainSectionRequest): Observable<GrainSection> {
-    return this.http.post<GrainSection>('http://54.152.195.230:8080/grain-sections', JSON.stringify(grainSection), {
+    return this.http.post<GrainSection>('http://3.228.5.134:8080/grain-sections', JSON.stringify(grainSection), {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
         'Content-Type': 'application/json'
