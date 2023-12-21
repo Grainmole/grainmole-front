@@ -78,3 +78,50 @@
     margin-bottom: 3vh;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .first-block {
+    padding: 5vh 5vw;
+    background-image: url("/assets/images/home-page/combine2.jpg");
+    background-position-x: 50%;
+
+    h1 {
+      width: 90%;
+    }
+  }
+
+  .second-block {
+    padding: 5vh 5vw ;
+    height: auto;
+
+    h2{
+      margin-bottom: 5vh;
+    }
+  }
+  .blocks {
+    flex-direction: column;
+  }
+
+  .block-content {
+    width: 100%;
+    margin-bottom: 2vh;
+  }
+
+  .planet{
+    font-size: 1.8rem;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+  }
+
+  .third-block {
+    padding: 5vh 5vw 0;
+
+    img {
+      display: none;
+    }
+
+    .left-side {
+      width: 100%;
+    }
+  }
+}
