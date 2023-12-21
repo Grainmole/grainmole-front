@@ -1,7 +1,7 @@
 FROM node:18-alpine
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm i
+RUN npm i && npx ng build && npm install http-server -g
 COPY . .
 EXPOSE 80
-CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--disable-host-check"]
+CMD ["http-server", "dist/grainmole"]
